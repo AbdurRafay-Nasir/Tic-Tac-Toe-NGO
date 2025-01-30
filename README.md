@@ -1,6 +1,8 @@
 # Tic-Tac-Toe Multiplayer
 Networked tic-tac-toe made in Unity 6000.0.26f1, using Netcode for Gameobjects.  
 
+![preview-image](https://github.com/user-attachments/assets/9f82153c-9233-4c97-bd18-9e38d5f86566)
+
 > [!IMPORTANT]  
 > This is intended to be used by Intermediate to Advanced users to understand Multiplayer game development.  
 > It is recommended to first understand unity basics If you are absolute beginner. 
