@@ -29,16 +29,46 @@ Networked tic-tac-toe made in Unity 6000.0.26f1, using Netcode for Gameobjects.
 - Multiplayer play mode 1.x.x
 
 ## Game Structure
-- `GameManager` is the core script of this game. It handles all the gameplay logic.
-- `VisualsManager` is responsible for spawning Circles and Crosses on all clients.
-- UI Managers are responsible for handling UI of game.
-    -  `TurnUIManager` shows which player turn currently is. Also shows either you are playing as circle or cross.
-    -  `ScoreUIManager` shows the current score of Circle and Cross.
-    -  `ResultUIManager` shows whether local client won or loose.
-    -  `RematchUIManager` shows a rematch button to restart the match.
-    -  `ButtonsUIManager` shows Host & Client buttons to join as host or client.
-- `GridPosition` calls Game Manager's ClickGrid() to tell which grid slot was clicked.
-- `MatchResult` is a struct that stores information about winner and start & end grid slot position that made the win.
+
+<table>
+  <tr>
+    <th><code>GameManager</code></th>
+    <td>The core script of this game. It handles all the gameplay logic.</td>
+  </tr>
+  <tr>
+    <th><code>VisualsManager</code></th>
+    <td>Responsible for spawning Circles and Crosses on all clients.</td>
+  </tr>
+  <tr>
+    <th><code>TurnUIManager</code></th>
+    <td>Shows which player's turn it currently is. Also shows whether you are playing as Circle or Cross.</td>
+  </tr>
+  <tr>
+    <th><code>ScoreUIManager</code></th>
+    <td>Displays the current score of Circle and Cross.</td>
+  </tr>
+  <tr>
+    <th><code>ResultUIManager</code></th>
+    <td>Indicates whether the local client won or lost.</td>
+  </tr>
+  <tr>
+    <th><code>RematchUIManager</code></th>
+    <td>Shows a rematch button to restart the match.</td>
+  </tr>
+  <tr>
+    <th><code>ButtonsUIManager</code></th>
+    <td>Displays Host & Client buttons to join as Host or Client.</td>
+  </tr>
+  <tr>
+    <th><code>GridPosition</code></th>
+    <td>Calls <code>GameManager</code>'s <code>ClickGrid()</code> to indicate which grid slot was clicked.</td>
+  </tr>
+  <tr>
+    <th><code>MatchResult</code></th>
+    <td>A struct that stores information about the winner and the start & end grid slot positions that made the win.</td>
+  </tr>
+</table>
+
 
 > [!TIP]
 > All scripts depend on `GameManager`. As a rule of thumb, ensure that visuals always depend on gameplay script and not vice versa.
