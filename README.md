@@ -5,7 +5,7 @@ Networked tic-tac-toe made in Unity 6000.0.26f1, using Netcode for Gameobjects.
 
 > [!IMPORTANT]  
 > This is intended to be used by Intermediate to Advanced users to understand Multiplayer game development.  
-> It is recommended to first understand unity basics If you are absolute beginner. 
+> If you are an absolute beginner, it is recommended to first learn the basics of Unity.
 
 ## Contents
 
@@ -119,7 +119,7 @@ This is a fancy way to tell what kind of structure, connections will use. There 
 - This is what you would use when you want to create a competitve game.
 - A Dedicated server is simply a computer running your game often without any graphics (to save resources).
 - Clients connect to dedicated server.
-- The final word is of server. If server says you died that means you died even if you didn't spawn yet. This is because server is responsible for game state (player's health, kills, deaths, score, k/d etc).
+- The server has the final authority. If the server says you died, then you are considered dead, even if you haven't spawned yet.
 - Cheating is often difficult in games using dedicated servers.
 - Example: Battlefield, Call of Duty etc.
 
@@ -131,7 +131,7 @@ This is a fancy way to tell what kind of structure, connections will use. There 
 - This is used for games where cheating is not a concern. Like Co-op.
 - A Client-hosted server is literally the same thing as dedicated server. The only difference is that it runs on a client's machine.
 - The client running the server is called host.
-- Since host is server and client at same time. They have final say, meaning they can kill your player without moving an inch.
+- Since the host is both the server and a client at the same time, they have the final say. This means they can eliminate your player without even moving.
 - Example: Among us
 
 ### Difference between Dedicated and Client-hosted servers
@@ -149,8 +149,7 @@ This is a fancy way to tell what kind of structure, connections will use. There 
 
 ### RPC
 RPC stands for Remote Procedure Call. It is a way to execute functions on server or clients. For example, a client can call a server RPC, this
-Rpc will be executed on server. Similarly, server can call client RPC, this will be executed on all clients by default. However we can tell on
-which client the rpc can run.
+Rpc will be executed on server. Similarly, server can call client RPC, this will be executed on all clients by default. However, we can specify which client the RPC should run on.
 
 > [!IMPORTANT]  
 > To make a function an Rpc, add `Rpc` attribute on it, and set the `SendTo` parameter to tell whether you want to send to server or clients.
@@ -186,12 +185,10 @@ public class ServerRpcExample : NetworkBehaviour
 You will see 2 logs of "Hello from client." on host console and nothing on virtual player console. You may ask why this happened?  
 Here is a step-by-step explanation of what happens.
 
-- Assume we have 2 clients C1 & C2. C1 is also server. This means C1 is a host.
-- `OnNetworkSpawn()` runs when connection is established between server and client.
-- C1 starts the game
-- C2 is a virtual player. 
-- Since C1 is a client it will call `SayHelloServerRpc()`, this call will be sent to server (which is also C1), and will execute there.
-- C2 is a client so it will call `SayHelloServerRpc()`, this call will be sent to C1 (because it is server as well) and will execute there.
+- Assume we have two clients, C1 and C2. C1 is also the server, meaning it acts as the host.
+- `OnNetworkSpawn()` is called when a connection is established between the server and a client.
+- C1 starts the game.
+- C2 is a virtual player.
 
 #### Client RPC
 Consider following code:
@@ -231,7 +228,7 @@ public class ClientRpcExample : NetworkBehaviour
 > This isn't the case for legacy `ClientRpc` attribute.
 
 ### Network Variable
-A network variable as the name implies is synchronized across the network. Usually All clients are allowed to read its value, but only server can write to it.
+As the name implies, a Network Variable is synchronized across all clients in the network.
 
 ## Texture and Sound Credits
 - [Code Monkey](https://www.youtube.com/@CodeMonkeyUnity/)
