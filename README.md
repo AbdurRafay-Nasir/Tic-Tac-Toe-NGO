@@ -25,8 +25,8 @@ Networked tic-tac-toe made in Unity 6000.0.26f1, using Netcode for Gameobjects.
 - [Author](#author)
 
 ## Packages Used
-- Netcode for Gameobjects 1.x.x
-- Multiplayer play mode 1.x.x
+- Netcode for Gameobjects 2.2.0
+- Multiplayer play mode 1.3.3
 
 ## Game Structure
 
